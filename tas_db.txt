@@ -1,0 +1,13 @@
+$sql="CREATE DATABASE tas_db";
+
+$sql = "CREATE TABLE `tas_db`.`project` (`pid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `pname` VARCHAR(30) NOT NULL, `start_date` DATE NOT NULL, `end_date` DATE NOT NULL, `prj_details` VARCHAR(200) NOT NULL, `req_time` DATE NOT NULL, `commit_time` DATE NOT NULL, `tech_details` VARCHAR(50) NOT NULL, `status` VARCHAR(10) NOT NULL, `news` VARCHAR(300) NULL) ENGINE = MyISAM;";
+
+$sql =CREATE TABLE `tas_db`.`client` (`cid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `cname` VARCHAR(50) NOT NULL, `contact` INT(11) NOT NULL, `organisation` VARCHAR(50) NOT NULL, `address` VARCHAR(50) NOT NULL, `org_contact` INT(11) NOT NULL, `login_id` VARCHAR(10) NOT NULL, `pswd` VARCHAR(20) NOT NULL, `pid` INT(7) NOT NULL, `details` VARCHAR(100) NULL) ENGINE = MyISAM;
+
+$sql = "CREATE TABLE `tas_db`.`managment` (`mid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `mname` VARCHAR(20) NOT NULL, `login` VARCHAR(10) NOT NULL, `pswd` VARCHAR(20) NOT NULL, `designation` VARCHAR(10) NOT NULL) ENGINE = MyISAM;";
+
+$sql = "CREATE TABLE `tas_db`.`employee` (`eid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `ename` VARCHAR(20) NOT NULL, `gender` VARCHAR(5) NOT NULL, `contact` INT(11) NOT NULL, `address` VARCHAR(50) NOT NULL, `login` VARCHAR(10) NOT NULL, `pswd` VARCHAR(20) NOT NULL, `join_date` DATE NOT NULL, `status` VARCHAR(10) NOT NULL, `department` VARCHAR(20) NOT NULL) ENGINE = MyISAM;";
+
+$sql = "CREATE TABLE `tas_db`.`task` (`tid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `eid` INT(7) NOT NULL, `pid` INT(7) NOT NULL, `tname` VARCHAR(20) NOT NULL, `desc` VARCHAR(300) NOT NULL, `status` VARCHAR(10) NOT NULL, `allocation` VARCHAR(10) NOT NULL, `date` DATE NOT NULL, `start_date` DATE NOT NULL, `end_date` DATE NOT NULL, `req_time` DATE NOT NULL, `given_time` DATE NOT NULL, `test_status` VARCHAR(10) NOT NULL, `test_iterations` INT(5) NOT NULL, `is_sent_test` VARCHAR(5) NOT NULL) ENGINE = MyISAM;";
+
+$sql = "CREATE TABLE `tas_db`.`admin` (`aid` INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(20) NOT NULL, `login` VARCHAR(10) NOT NULL, `pswd` VARCHAR(20) NOT NULL) ENGINE = MyISAM;";
